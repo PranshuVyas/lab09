@@ -23,14 +23,15 @@ if [ $value -eq 0 ]
 then
   count=$(($count+ 1))
   ./setbits.sh "$count"
-fi
+fi  
 
 if [ $count -eq 16 ]
 then
-  count=0
+count=0
   gpio write 4 1
   sleep 1
   gpio write 4 0
+  echo "You reached End"		
 fi 
 sleep 0.5
 done
